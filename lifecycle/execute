@@ -12,7 +12,7 @@ mkdir -p "$OUTPUT_DIR"
 
 # Run the Maestro co-simulation tool using cosim.json
 java -jar ./tools/maestro-2.4.1-jar-with-dependencies.jar \
-  simulate \
+  interpret \
   cosim.json \
   -o "$OUTPUT_DIR" > debug.log 2>&1
 
