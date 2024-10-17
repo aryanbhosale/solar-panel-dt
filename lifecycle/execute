@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# This script runs the co-simulation.
+
+echo "Executing the Digital Twin simulation..."
+
+# Define the output directory
+OUTPUT_DIR="./data/solar-panel-system/output"
+
+# Create the output directory if it doesn't exist
+mkdir -p "$OUTPUT_DIR"
+
+# Run the Maestro co-simulation tool using cosim.json
+java -jar ./tools/maestro-2.4.1-jar-with-dependencies.jar \
+  simulate \
+  cosim.json \
+  -o "$OUTPUT_DIR" > debug.log 2>&1
+
+# Check if the simulation was successful
+if [ $? -eq 0 ]; then
+    echo "Simulation completed successfully."
+else
+    echo "Simulation failed. Check debug.log for details."
+fi

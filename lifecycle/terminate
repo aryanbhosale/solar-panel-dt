@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# This script is used to terminate any running simulations (if applicable).
+
+echo "Terminate operation is not required for this digital twin."

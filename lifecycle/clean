@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# This script cleans up the outputs and logs.
+
+echo "Cleaning up outputs and logs..."
+
+# Remove debug.log if it exists
+if [ -f "./debug.log" ]; then
+    rm -f "./debug.log"
+fi
+
+# Remove the output directory
+OUTPUT_DIR="./data/solar-panel-system/output"
+if [ -d "$OUTPUT_DIR" ]; then
+    rm -rf "$OUTPUT_DIR"
+fi
+
+echo "Cleanup completed."
