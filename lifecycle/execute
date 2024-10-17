@@ -1,20 +1,18 @@
 #!/bin/bash
 
-# This script runs the co-simulation.
+# This script runs the co-simulation using Maestro 2.3.0.
 
 echo "Executing the Digital Twin simulation..."
 
 # Define the output directory
 OUTPUT_DIR="./data/solar-panel-system/output"
-
-# Create the output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
 # Run the Maestro co-simulation tool using cosim.json
-java -jar ./tools/maestro-2.4.1-jar-with-dependencies.jar \
-  interpret \
-  cosim.json \
-  -o "$OUTPUT_DIR" > debug.log 2>&1
+java -jar ./tools/maestro-2.3.0-jar-with-dependencies.jar \
+  import -output "$OUTPUT_DIR" \
+  --dump-intermediate sg1 cosim.json \
+  -i -vi FMI2 output-dir > debug.log 2>&1
 
 # Check if the simulation was successful
 if [ $? -eq 0 ]; then
