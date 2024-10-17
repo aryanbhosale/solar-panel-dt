@@ -1,7 +1,7 @@
 {
     "fmus": {
-      "{weather}": "file:////mnt/c/Users/aryan/OneDrive - BITS Pilani K K Birla Goa Campus/Desktop/solar-panel-dtaas/SolarPanelSystem/FMUs/OpenModelica/WeatherModel.fmu",
-      "{panel}": "file:////mnt/c/Users/aryan/OneDrive - BITS Pilani K K Birla Goa Campus/Desktop/solar-panel-dtaas/SolarPanelSystem/FMUs/OpenModelica/SolarPanelModel.fmu"
+      "{weather}": "file:////mnt/c/Users/aryan/OneDrive%20-%20BITS%20Pilani%20K%20K%20Birla%20Goa%20Campus/Desktop/solar-panel-dtaas/SolarPanelSystem/FMUs/OpenModelica/WeatherModel.fmu",
+      "{panel}": "file:////mnt/c/Users/aryan/OneDrive%20-%20BITS%20Pilani%20K%20K%20Birla%20Goa%20Campus/Desktop/solar-panel-dtaas/SolarPanelSystem/FMUs/OpenModelica/SolarPanelModel.fmu"
     },
     "connections": {
       "{weather}.WeatherModel.irradiance": [

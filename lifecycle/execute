@@ -8,11 +8,12 @@ echo "Executing the Digital Twin simulation..."
 OUTPUT_DIR="./data/solar-panel-system/output"
 mkdir -p "$OUTPUT_DIR"
 
-# Run the Maestro co-simulation tool using cosim.json
+
 java -jar ./tools/maestro-2.3.0-jar-with-dependencies.jar \
   import -output "$OUTPUT_DIR" \
-  --dump-intermediate sg1 cosim.json \
+  --dump-intermediate sg1 cosim.json time.json \
   -i -vi FMI2 output-dir > debug.log 2>&1
+
 
 # Check if the simulation was successful
 if [ $? -eq 0 ]; then
