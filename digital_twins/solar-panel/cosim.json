@@ -1,0 +1,25 @@
+{
+    "fmus": {
+      "{weather}": "file:///workspace/examples/models/WeatherModel.fmu",
+      "{panel}": "file:///workspace/examples/models/SolarPanelModel.fmu"
+    },
+    "connections": {
+      "{weather}.WeatherModel.irradiance": [
+        "{panel}.SolarPanelModel.irradiance"
+      ]
+    },
+    "parameters": {},
+    "logVariables": {
+      "{weather}.WeatherModel": ["irradiance"],
+      "{panel}.SolarPanelModel": ["power"]
+    },
+    "algorithm": {
+      "type": "fixed-step",
+      "size": 60
+    },
+    "startTime": 0,
+    "endTime": 86400,
+    "loggingOn": false,
+    "overrideLogLevel": "INFO"
+  }
+  

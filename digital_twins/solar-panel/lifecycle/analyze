@@ -1,0 +1,6 @@
+#!/bin/bash
+
+printf "Plotting results"
+mkdir -p /workspace/examples/data/solar-panel/output/plots
+python lifecycle/plot.py
+mv result*.png /workspace/examples/data/olar-panel/output/plots

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# This script is for evolving the digital twin (not applicable in this case).
-
-echo "Evolve operation is not supported on this digital twin."
