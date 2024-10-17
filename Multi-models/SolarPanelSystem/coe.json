@@ -1,0 +1,21 @@
+{
+    "startTime": 0,
+    "endTime": 86400,
+    "multimodel_path": "Multi-models/SolarPanelSystem/mm.json",
+    "livestream": {
+      "{weather}.WeatherModel": ["irradiance"],
+      "{panel}.SolarPanelModel": ["power"]
+    },
+    "livestreamInterval": 60,
+    "visible": false,
+    "loggingOn": false,
+    "algorithm": {
+      "type": "fixed-step",
+      "size": 60
+    },
+    "postProcessingScript": "",
+    "stabilizationEnabled": false,
+    "global_absolute_tolerance": 1e-6,
+    "global_relative_tolerance": 1e-4
+  }
+  

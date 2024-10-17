@@ -1,0 +1,11 @@
+{
+    "fmus": {
+      "{weather}": "OpenModelica/WeatherModel.fmu",
+      "{panel}": "OpenModelica/SolarPanelModel.fmu"
+    },
+    "connections": {
+      "{weather}.WeatherModel.irradiance": ["{panel}.SolarPanelModel.irradiance"]
+    },
+    "parameters": {}
+  }
+  
