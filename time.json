@@ -1,6 +1,8 @@
 {
-    "startTime": 0,
-    "endTime": 86400,
-    "stepSize": 60
-  }
+  "startTime": 0,
+  "endTime": 86400,
+  "reportProgress": true,
+  "liveLogInterval": 0,
+  "logLevels": {}
+}
   
