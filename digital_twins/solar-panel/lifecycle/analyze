@@ -1,6 +1,13 @@
 #!/bin/bash
+set -e  # Exit on any error
+set -x  # Print commands as they are executed
 
-printf "Plotting results"
-mkdir -p /workspace/examples/data/solar-panel/output/plots
-python lifecycle/plot.py
-mv result*.png /workspace/examples/data/olar-panel/output/plots
+# Create directory with verbose output
+echo "Creating directories..."
+mkdir -pv /workspace/examples/data/solar-panel/output/plots
+
+echo "Running Python script..."
+python ./lifecycle/plot.py
+
+echo "Moving plot files..."
+mv -v result*.png /workspace/examples/data/solar-panel/output/plots/
