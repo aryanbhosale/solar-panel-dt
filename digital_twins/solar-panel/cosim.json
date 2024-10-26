@@ -1,25 +1,40 @@
 {
-    "fmus": {
-      "{weather}": "file:///workspace/examples/models/WeatherModel.fmu",
-      "{panel}": "file:///workspace/examples/models/SolarPanelModel.fmu"
-    },
-    "connections": {
-      "{weather}.WeatherModel.irradiance": [
-        "{panel}.SolarPanelModel.irradiance"
-      ]
-    },
-    "parameters": {},
-    "logVariables": {
-      "{weather}.WeatherModel": ["irradiance"],
-      "{panel}.SolarPanelModel": ["power"]
-    },
-    "algorithm": {
-      "type": "fixed-step",
-      "size": 60
-    },
-    "startTime": 0,
-    "endTime": 86400,
-    "loggingOn": false,
-    "overrideLogLevel": "INFO"
-  }
-  
+  "fmus": {
+    "{weather}": "file:///workspace/examples/models/WeatherModel.fmu",
+    "{maintenance}": "file:///workspace/examples/models/MaintenanceModel.fmu",
+    "{panel}": "file:///workspace/examples/models/SolarPanelModel.fmu"
+  },
+  "connections": {
+    "{weather}.WeatherModel.irradiance": [
+      "{maintenance}.MaintenanceModel.irradiance"
+    ],
+    "{maintenance}.MaintenanceModel.effectiveIrradiance": [
+      "{panel}.SolarPanelModel.effectiveIrradiance"
+    ],
+    "{weather}.WeatherModel.tempCoeff": [
+      "{panel}.SolarPanelModel.tempCoeff"
+    ]
+  },
+  "parameters": {
+    "{weather}.WeatherModel.beta": -0.004,
+    "{weather}.WeatherModel.Tcell": 35,
+    "{maintenance}.MaintenanceModel.dirtFactor": 0.05,
+    "{panel}.SolarPanelModel.shadingFactor": 0.2,
+    "{panel}.SolarPanelModel.selectedEfficiency": 0.2,
+    "{panel}.SolarPanelModel.beta": 0.3491,
+    "{panel}.SolarPanelModel.phi": 0.6109
+  },  
+  "logVariables": {
+    "{weather}.WeatherModel": ["irradiance", "irradianceRaw", "timeInHours", "tempCoeff"],
+    "{maintenance}.MaintenanceModel": ["effectiveIrradiance"],
+    "{panel}.SolarPanelModel": ["power", "cosTheta"]
+  },  
+  "algorithm": {
+    "type": "fixed-step",
+    "size": 60
+  },
+  "startTime": 0,
+  "endTime": 86400,
+  "loggingOn": true,
+  "overrideLogLevel": "INFO"
+}
